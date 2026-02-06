@@ -102,3 +102,27 @@ body {
 #images img:hover {
     transform: scale(1.05);
 }
+.search-box button {
+    padding: 15px 22px;
+    border: none;
+    cursor: pointer;
+    background: #38bdf8;
+    color: black;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #22c55e;
+}
+
+.listening {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(56,189,248,0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(56,189,248,0); }
+    100% { box-shadow: 0 0 0 0 rgba(56,189,248,0); }
+}
+
