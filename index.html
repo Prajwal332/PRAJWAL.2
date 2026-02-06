@@ -24,3 +24,23 @@
 <script src="script.js"></script>
 </body>
 </html>
+<!-- AI Chatbot Button -->
+<button class="chat-toggle" onclick="toggleChat()">🤖</button>
+
+<!-- AI Chatbot Window -->
+<div class="chatbot" id="chatbot">
+    <div class="chat-header">
+        AI Assistant
+        <span onclick="toggleChat()">✖</span>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+        <div class="bot">Hello 👋 I am your AI assistant. Ask me anything!</div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Ask something...">
+        <button onclick="sendMessage()">➤</button>
+    </div>
+</div>
+
