@@ -35,6 +35,33 @@ function search() {
             });
         });
 }
+function toggleChat() {
+    const chat = document.getElementById("chatbot");
+    chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+}
+
+function sendMessage() {
+    const input = document.getElementById("chatInput");
+    const msg = input.value;
+    if (!msg) return;
+
+    const body = document.getElementById("chatBody");
+
+    body.innerHTML += `<div class="user">${msg}</div>`;
+    input.value = "";
+
+    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${msg}`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.extract) {
+                body.innerHTML += `<div class="bot">${data.extract}</div>`;
+            } else {
+                body.innerHTML += `<div class="bot">Sorry, I couldn't find information on that.</div>`;
+            }
+            body.scrollTop = body.scrollHeight;
+        });
+}
+
 
 
 
