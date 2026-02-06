@@ -1,0 +1,52 @@
+body {
+font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+}
+
+.layout-content.status .masthead-container.basic .masthead .logo-container {
+    max-width: 64px;
+}
+
+.flat-button, .layout-content.status .masthead-container .updates-dropdown-container .show-updates-dropdown {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    padding: 10px 12px 9px;
+  	  color: #999;
+    border: 1px solid #ddd;
+    transition: all .15s ease-in-out;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    text-shadow: none;
+}
+
+.flat-button, .layout-content.status .masthead-container .updates-dropdown-container .show-updates-dropdown:hover {
+  	  color: #111;
+    border: 1px solid #999;
+}
+
+.flat-button, .masthead .updates-dropdown-container .show-updates-dropdown, .layout-content.status-full-history .show-filter.open {
+    background-color: #fff;
+}
+
+.layout-content.status.status-index .page-status {
+    padding: .5rem 1.25rem .85rem;
+    text-shadow: none;
+    font-weight: 400;
+    border-radius: 0;
+}
+
+.layout-content.status.status-index .page-status .font-large {
+    font-weight: 400;
+}
+
+.font-large {
+    font-weight: 500;
+    font-size: 18px;
+    font-size: 1.2rem;
+}
+
+/*
+Replace "x" with the number of days you want to show + 2.
+For example, if you wanted to show the last 3 days of history, you would replace x with 5.
+Do the replacements described above and then paste the following into your Custom CSS section.
+*/
+
+.status-day:nth-child(n+10) { display: none; }
