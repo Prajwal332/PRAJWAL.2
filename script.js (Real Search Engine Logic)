@@ -35,7 +35,33 @@ async function search() {
             });
         });
 }
+function startVoice() {
+    if (!('webkitSpeechRecognition' in window)) {
+        alert("Voice search not supported in this browser");
+        return;
+    }
+
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.start();
+
+    const micButton = document.querySelector(".search-box button");
+    micButton.classList.add("listening");
+
+    recognition.onresult = function(event) {
+        const speechText = event.results[0][0].transcript;
+        document.getElementById("query").value = speechText;
+        micButton.classList.remove("listening");
+        search();
+    };
+
+    recognition.onerror = function() {
+        micButton.classList.remove("listening");
+    };
+}
+
 create API key:
 
 YOUR_UNSPLASH_API_KEY
+
 
